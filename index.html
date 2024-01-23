@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+      <!-- Search -->
+    <div class="container">
+      <h4>SEARCH</h4>
+        <input type="search" id="searchInput" class="form-control" oninput="search()" placeholder="Search.....">
+        <p id="resultsList">
+        </p>
+    </div>
+    <br><br>
+
+  <div class="container">
+    <h4>LOGIN FORM</h4>
+    <form id="loginForm">
+        <!-- 1.Name -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" required oninput="validateName()">
+        <small id="nameError" class="error"></small>
+        <span></span>
+      </div>
+
+      <!-- 2.Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter your email" required oninput="validateEmail()">
+        <small id="emailError" class="error"></small>
+      </div>
+
+      <!-- 3.Phone number -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" required oninput="validatePhone()">
+        <small id="phoneError" class="error"></small>
+      </div>
+
+      <!-- 4.DOB -->
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" required oninput="validateDOB()">
+        <small id="dobError" class="error"></small>
+      </div>
+
+      <!-- 5.Gender -->
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" required oninput="validateGender()">
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- 6.Occupatyion -->
+      <div class="form-group">
+        <label for="occupation">Occupation</label>
+        <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
+      </div>
+
+      <!-- 7.Education -->
+      <div class="form-group">
+        <label for="education">Education</label>
+        <select class="form-control" id="education" required oninput="validateEducation()">
+          <option value="">Select</option>
+          <option value="BE">BE</option>
+          <option value="BA">BA</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="BCA">BCA</option>
+          <option value="BSc">BSc</option>
+          <option value="B.Com">B.Com</option>
+        </select>
+      </div>
+
+      <!-- 8.Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" required oninput="validateUser()">
+        <small id="usernameError" class="error"></small>
+      </div>
+
+      <!-- 9.Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div id="tp">
+        <input type="password" class="form-control" id="password" placeholder="Enter password" required oninput="validatePassword()">
+        <img src="hidden.png" id="eye" onclick="showPassword()"></imgsrc>
+        <!-- <input type="button" class="but" onclick="showPassword()">Show Password -->
+      </div>
+        <!-- <br> -->
+        <small id="passwordError" class="error"></small>
+      </div>
+
+      <!-- 10.PAN Number -->
+      <div class="form-group">
+        <label for="pan">PAN Number</label>
+        <input type="text" class="form-control" id="pan" placeholder="Enter your PAN number" required oninput="validatePAN()">
+        <small id="panError" class="error"></small>
+      </div>
+
+      <!-- 11.Image input -->
+      <div class="form-group">
+        <label for="image">Upload Image (Max size: 2MB)</label>
+        <input type="file" class="form-control-file" id="image" accept=".jpg, .jpeg, .png" required oninput="return validateImage()">
+        <small id="imageError" class="error"></small>
+      </div>
+
+      <!-- Submit -->
+      <input type="submit" class="btn btn-primary" onclick="validationForm()">
+    </form>
+  </div>
+  <br><br><br>
+</body>
+</html>
